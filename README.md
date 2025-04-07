@@ -3,7 +3,7 @@ Aplicacion realizada con Spring Boot. Permite a cada usuario crear o eliminar ca
 
 ---
 
-# funcionalidades
+## ✨ Funcionalidades
 - 🗂️ Cada usuario posee una main folder.
 - 📁 Cada usuario puede crear y eliminar carpetas.
 - 📤 Cada usuario puede subir y 🗑️ eliminar archivos en sus carpetas (📏 limitación de 10MB por archivo).
