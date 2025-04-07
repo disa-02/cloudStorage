@@ -11,16 +11,15 @@ import com.cloudStorage.cloudStorage.entity.User;
 import com.cloudStorage.cloudStorage.repository.UserRepository;
 import com.cloudStorage.exception.ApiErrorException;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class UserService {
     
-    private UserRepository userRepository;
-    private PasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder){
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
 
     public void create(User user) {
         Optional<User> userOpt = userRepository.findByUsername(user.getUsername());

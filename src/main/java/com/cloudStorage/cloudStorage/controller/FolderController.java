@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cloudStorage.cloudStorage.dto.in.FolderInDto;
 import com.cloudStorage.cloudStorage.dto.out.StorageElementOutDto;
-import com.cloudStorage.cloudStorage.entity.Folder;
 import com.cloudStorage.cloudStorage.service.FolderService;
-import com.cloudStorage.exception.ApiErrorException;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,13 +29,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RestController
 @SecurityRequirement(name = "Bearer Authentication")
 @RequestMapping("/api/folder")
+@AllArgsConstructor
 public class FolderController {
 
-    private FolderService folderService;
-
-    public FolderController(FolderService folderService){
-        this.folderService = folderService;
-    }
+    private final FolderService folderService;
 
     @PostMapping("/{userId}")
     @PreAuthorize("#userId == principal.id")

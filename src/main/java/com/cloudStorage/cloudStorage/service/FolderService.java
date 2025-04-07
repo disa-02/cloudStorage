@@ -16,23 +16,18 @@ import com.cloudStorage.cloudStorage.mapper.StorageElementToStorageElementOutDto
 import com.cloudStorage.cloudStorage.repository.FolderRepository;
 import com.cloudStorage.exception.ApiErrorException;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import lombok.AllArgsConstructor;
+
+
 
 @Service
+@AllArgsConstructor
 public class FolderService {
 
-    private FolderRepository folderRepository;
-    private UserService userService;
-    private SystemFileService systemFileService;
-    StorageElementToStorageElementOutDto storageElementToStorageElementOutDto;
-
-    public FolderService (FolderRepository folderRepository , UserService userService, SystemFileService systemFileService,StorageElementToStorageElementOutDto storageElementToStorageElementOutDto){
-        this.folderRepository = folderRepository; 
-        this.userService = userService;
-        this.systemFileService =systemFileService;
-        this.storageElementToStorageElementOutDto = storageElementToStorageElementOutDto;
-    }
+    private final FolderRepository folderRepository;
+    private final UserService userService;
+    private final SystemFileService systemFileService;
+    private final StorageElementToStorageElementOutDto storageElementToStorageElementOutDto;
 
     public void save(Folder folder) {
         folderRepository.save(folder);

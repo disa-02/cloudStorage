@@ -1,4 +1,4 @@
-package com.cloudStorage.cloudStorage.security;
+package com.cloudStorage.cloudStorage.configuration.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,8 +10,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.cloudStorage.cloudStorage.security.filter.AuthenticationFilter;
-import com.cloudStorage.cloudStorage.security.filter.AuthorizationFilter;
+import com.cloudStorage.cloudStorage.configuration.security.filter.AuthenticationFilter;
+import com.cloudStorage.cloudStorage.configuration.security.filter.AuthorizationFilter;
 import com.cloudStorage.cloudStorage.util.JwtUtils;
 
 @Configuration

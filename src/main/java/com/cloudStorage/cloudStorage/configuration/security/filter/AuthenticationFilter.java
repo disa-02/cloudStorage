@@ -1,4 +1,4 @@
-package com.cloudStorage.cloudStorage.security.filter;
+package com.cloudStorage.cloudStorage.configuration.security.filter;
 
 import java.io.IOException;
 import java.util.HashMap;

@@ -8,7 +8,7 @@ import com.cloudStorage.exception.ApiErrorException;
 
 @Service
 public class SystemFolderService {
-    private String mainUrl = "src/main/resources/files";
+    private final String mainUrl = "src/main/resources/files";
 
     public SystemFolderService(){
         File folder = new File(mainUrl);

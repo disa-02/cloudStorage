@@ -6,10 +6,16 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Folder extends StorageElement {
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
@@ -30,7 +36,7 @@ public class Folder extends StorageElement {
     }
 
     public List<Folder> getFolders() {
-        List<Folder> folders = new ArrayList();
+        List<Folder> folders = new ArrayList<>();
         for(StorageElement se: elements){
             if(se instanceof Folder)
                 folders.add((Folder) se);
@@ -39,7 +45,7 @@ public class Folder extends StorageElement {
     }
 
     public List<File> getFiles() {
-        List<File> files = new ArrayList();
+        List<File> files = new ArrayList<>();
         for(StorageElement se: elements){
             if(se instanceof File)
                 files.add((File) se);

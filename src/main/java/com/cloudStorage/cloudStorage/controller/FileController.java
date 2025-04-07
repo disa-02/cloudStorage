@@ -3,17 +3,16 @@ package com.cloudStorage.cloudStorage.controller;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.cloudStorage.cloudStorage.dto.out.StorageElementOutDto;
 import com.cloudStorage.cloudStorage.entity.File;
 import com.cloudStorage.cloudStorage.service.FileService;
 import com.cloudStorage.cloudStorage.service.SystemFileService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.List;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
@@ -33,16 +32,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @SecurityRequirement(name = "Bearer Authentication")
 @RequestMapping("/api/file")
 @CrossOrigin
+@AllArgsConstructor
 public class FileController {
 
-    private SystemFileService systemFileService;
-    private FileService fileService;
-
-
-    public FileController(SystemFileService systemFileService, FileService fileService){
-        this.systemFileService = systemFileService;
-        this.fileService = fileService;
-    }
+    private final SystemFileService systemFileService;
+    private final FileService fileService;
     
     @PostMapping("")
     @PreAuthorize("#userId == principal.id")

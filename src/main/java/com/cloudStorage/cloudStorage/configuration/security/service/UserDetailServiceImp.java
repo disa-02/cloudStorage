@@ -1,4 +1,4 @@
-package com.cloudStorage.cloudStorage.security.service;
+package com.cloudStorage.cloudStorage.configuration.security.service;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

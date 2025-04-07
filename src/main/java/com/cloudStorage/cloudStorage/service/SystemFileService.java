@@ -11,9 +11,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.cloudStorage.exception.ApiErrorException;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class SystemFileService {
-    private String mainUrl = "src/main/resources/files";
+    private final String mainUrl = "src/main/resources/files";
 
 
     public void add(String fileId, MultipartFile file, String folderId) throws IOException {
